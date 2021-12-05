@@ -110,7 +110,7 @@ button:hover {
         }
         $.ajax({
             method: "POST",
-            url: "https://myfunvbui.azurewebsites.net/api/HttpTrigger1?code=9aUh8Cnd7NeMdkqwxSDa3/n24wpl3dKB67UJLVUBua6LcMogbQj4/A==" + JSON.stringify(account),
+            url: "https://myfunvbui.azurewebsites.net/api/HttpTrigger1/account" + JSON.stringify(account),
             success: function (msg) {
                 alert(msg.id);
                 window.location="signin.html";
