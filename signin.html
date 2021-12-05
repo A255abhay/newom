@@ -57,7 +57,33 @@ button {
             <button type="button" class="cancelbtn"> Cancel</button> 
             Forgot <a href="#"> password? </a> 
         </div> 
-    </form>   
+    </form>
+  <!-- jQuery JS-->
+<script src="vendor/jquery/jquery.min.js"></script>
+
+<!-- Main JS-->
+<script src="js/global.js"></script>
+
+<script>
+    function signup() {
+        var account = {
+            'name': $("[name=full_name]").val(), 'email': $("[name=email]").val(),
+            'passward': $("[name=password]").val()
+        }
+        $.ajax({
+            method: "POST",
+            url: "https://koko1kart.azurewebsites.net/api/HttpTrigger1/account/" + JSON.stringify(account),
+            success: function (msg) {
+                alert(msg.id);
+                window.location="signin.html";
+            },
+            error:
+                function (msg) {
+                    alert("Error: " + msg);
+                }
+        }),
+   }
+ </script>
 </body>   
 </html>
 
